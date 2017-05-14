@@ -30,10 +30,10 @@ int imprime_tela()
         printf("***** Calculadora ***** \n\n");
         printf("Opcoes disponiveis: \n\n");
         printf("1. Inserir expressao \n");
-        printf("2. Carregar expressao de um arquivo \n");
+        //printf("2. Carregar expressao de um arquivo \n");
         printf("3. Editar expressao \n");
         printf("4. Calcular expressao \n");
-        printf("5. Salvar expressao em um arquivo \n\n");
+        //printf("5. Salvar expressao em um arquivo \n\n");
         printf("6. Sair da aplicacao \n");
         printf("\n");
         printf("Favor escolher uma opcao: ");
@@ -53,18 +53,15 @@ int imprime_tela()
 }
 
 
-int main()
-{
-
+int main(){
     char expr[100];
     char posfix[100];
 
-    int i,
-        opcao = 6;
+    int i, opcao = 6;
 
     double resultado;
 
-    FILE *fp, *fp2;
+    //FILE *fp, *fp2;
 
     expr[0]		= '\0';
     posfix[0]	= '\0';
@@ -106,16 +103,13 @@ int main()
 
             break;
 
-        case 2:
-            /* Le expressao do arquivo texto */
+        /*case 2:
 
             fgets ( expr, 50 , fp );
 
-            /* verifica se expressao esta correta antes de chamar a funcao InfParaPos */
             if(testarExpr(expr))
             {
                 InfParaPos(expr, posfix);
-                /* imprime a expressao na ordem posfixada */
                 printf("Expressao na ordem polonesa reversa: \n");
                 for(i = 0; posfix[i] != '\0'; i++)
                 {
@@ -130,7 +124,7 @@ int main()
             printf("\n\n");
 
             break;
-
+        */
         case 3:
             /* editar expressao */
 
@@ -170,9 +164,7 @@ int main()
 
             break;
 
-        case 5:
-            /* salva expressao em arquivo texto */
-
+        /*case 5:
             fp2 = fopen("exprSalvas.txt", "ab+");
 
             if(expr[0] != '\0')
@@ -190,8 +182,7 @@ int main()
 
             break;
 
-        }
-
+        }*/
     }
     /* continua programa enquanto usuario nao decidir sair */
     while( opcao != 6 );
